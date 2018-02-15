@@ -3,7 +3,7 @@ window.onload = function () {
     direction: 'horizontal',
     loop: true,
     autoplay: {
-      delay: 3000,
+      delay: 2500,
       stopOnLastSlide: false,
       disableOnInteraction: true,
     },

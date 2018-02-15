@@ -112,11 +112,32 @@ h3 {
   width: 80%;
 }
 
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+  left: -30px;
+}
+
 .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
   margin: 0 10px;
 }
 .swiper-container .swiper-pagination-bullet-active {
   background: #ff5454 !important;
+}
+
+.icon-container img {
+  height: 96px;
+  width: 96px;
+  margin-left: 90px;
+  margin-top: 30px;
+}
+
+.icon-container p {
+  text-align: center;
+}
+
+.icon-container {
+  display:  inline-block;
+  width: 45%;
+  height: 90%;
 }
 
 .chart {
@@ -125,12 +146,6 @@ h3 {
   width:  100%;
 }
 
-.chartTitle {
-  width: 100%;
-  height: 30px;
-  margin: 0 0 20px 0;
-  line-height: 30px;
-}
 
 container p {
   height: 80px;
