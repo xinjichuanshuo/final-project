@@ -91,6 +91,143 @@ window.onload = function () {
     ]
   };
 
+  var age_data = [];
+  var age_male = [
+    4,164,232,312,407,479,507,575,549,540,
+    458,370,279,277,196,178,169,134,98,111,
+    86,92,77,84,39,30,38,36,45,24,14,11,11,
+    9,8,5,7,6,8,1,2,2,2,2,2,0,4,2,1,1,1
+  ];
+  var age_female = [
+    9,61,125,134,219,274,283,280,316,289,220,
+    159,150,128,79,84,77,62,74,65,60,54,53,41,
+    25,29,29,20,32,24,13,12,12,8,12,5,10,7,6,
+    4,2,1,0,1,1,0,0,0,0,0
+  ];
+  for (var i = 26; i < 76; i++) {
+    age_data.push(i);
+  }
+
+  var ageOption = {
+    title: {
+        text: '用户性别分布'
+    },
+    legend: {
+        data: ['男性', '女性'],
+        align: 'left'
+    },
+    toolbox: {
+        feature: {
+            magicType: {
+                type: ['stack', 'tiled']
+            },
+            dataView: {},
+            saveAsImage: {
+                pixelRatio: 2
+            }
+        }
+    },
+    tooltip: {},
+    xAxis: {
+        data: age_data,
+        silent: false,
+        splitLine: {
+            show: false
+        }
+    },
+    yAxis: {
+    },
+    series: [{
+        name: '男性',
+        type: 'bar',
+        color: '#4168b1',
+        data: age_male,
+        animationDelay: function (idx) {
+            return idx * 10;
+        }
+    }, {
+        name: '女性',
+        type: 'bar',
+        color: '#fb7373',
+        data: age_female,
+        animationDelay: function (idx) {
+            return idx * 10 + 100;
+        }
+    }],
+    animationEasing: 'elasticOut',
+    animationDelayUpdate: function (idx) {
+        return idx * 5;
+    }
+  };
+
+  var educationOption = {
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+        data:['男性', '女性']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    yAxis : [
+        {
+            type : 'category',
+            axisTick : {show: false},
+            data : ['高中中专及以下','大专','本科','双学士','硕士','博士','博士后']
+        }
+    ],
+    series : [
+        {
+            name:'男性',
+            type:'bar',
+            color:'#4168b1',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'right'
+                }
+            },
+            data:[1424, 2390, 2441, 81, 288, 52, 18]
+        },
+        {
+            name:'女性',
+            type:'bar',
+            clolr:'#fb7373',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'right'
+                }
+            },
+            data:[718, 1484, 1172, 32, 134, 5, 4]
+        }// },
+        // {
+        //     name:'支出',
+        //     type:'bar',
+        //     stack: '总量',
+        //     label: {
+        //         normal: {
+        //             show: true,
+        //             position: 'left'
+        //         }
+        //     },
+        //     data:[-120, -132, -101, -134, -190, -230, -210]
+        // }
+    ]
+  };
+
   var pieData = genData();
   var pieOption = {
     title : {
@@ -256,11 +393,12 @@ window.onload = function () {
 };
 
   echarts.init(arr[0]).setOption(mapOption);
-  echarts.init(arr[1]).setOption(pieOption);
-  var barChart = echarts.init(arr[2]);
+  echarts.init(arr[1]).setOption(ageOption);
+  echarts.init(arr[2]).setOption(educationOption);
+  var barChart = echarts.init(arr[4]);
   barChart.setOption(barOption);
-  echarts.init(arr[3]).setOption(scatterOption);
-  echarts.init(arr[4]).setOption(lineOption);
+  echarts.init(arr[5]).setOption(scatterOption);
+  echarts.init(arr[6]).setOption(lineOption);
 
   function genData() {
     var nameList = [
