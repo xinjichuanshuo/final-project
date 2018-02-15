@@ -5,7 +5,7 @@ window.onload = function () {
     autoplay: {
       delay: 2500,
       stopOnLastSlide: false,
-      disableOnInteraction: true,
+      disableOnInteraction: false,
     },
     // 如果需要分页器
     pagination: {
