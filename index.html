@@ -2,8 +2,9 @@
 <html>
 <head>
   <title> 数据画像｜你会在婚恋网站上遇到什么样的TA？ </title>
-  <style type="text/css">@import "index.css"</style>
   <meta name="viewport" content="width=device-width; maximumscale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
+  <style type="text/css">@import "index.css"</style>
 </head>
 <body>
   <header>
@@ -36,7 +37,6 @@
       <p>在用户的教育程度方面，男女各层次受教育程度的比例与总体的男女比例还是较为接近的，没有出现明显的教育不均衡现象，可以说男女受教育水平基本相当。在本科、硕士学历层面上，女性的比例都略微高于男性，难道高学历的女性真的更难找到合适的另一半？不过在博士学位上，男女差距最为明显，男性占有绝大的（91.23%）的数量优势。
       </p>
       <div class="container">
-        <h3 class="chartTitle">用户教育程度对比</h3>
         <div class="chart" id="line"></div>
       </div>
     </div>
@@ -47,20 +47,30 @@
       <p>对于另一半的教育程度而言，男性用户的实际水平仍略高于女性用户的期待值，而男人们的理想值再次拉低了下限——从平均来看，他们认为女性的学历在高中中专到大专的水平就够了，而女方学历水平平均在大专到本科之间。<strong>这样看来，身高与学历并不是择偶市场上影响男方对女方评价的硬性条件。</strong>
       <p>但同时我们也发现，用户自身受教育水平和择偶时要求的对象受教育水平有很强的相关性。如果我是文化人，希望你也能满腹经纶，没毛病。</p>
     </div>
-    <div class="container">
-      <h3 class="chartTitle">毕业生入职热门城市人数统计</h3>
-      <div class="chart" id="bar"></div>
-    </div>
     <div class="text-container">
       <p class="section-title">我们在交友网站上最可能遇见？</p>
       <p>最后，相亲网站上最具典型性的男女形象是什么样子的？你可以根据不同的年龄划分找到答案。</p>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="images/man1.svg" alt="">
+            <img src="images/woman1.svg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="images/man2.svg" alt="">
+            <img src="images/woman2.svg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="images/man3.svg" alt="">
+            <img src="images/woman3.svg" alt="">
+          </div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+      </div>
       <p>大致来看，她33岁，拥有本科学历，同时也希望对方至少是本科学历，偏爱比自己小的男性；41岁和54岁的她们则是大专学历，对男性的学历也同样地降低到了大专水平，很巧的是这三位典型女性的身高都是162cm。33岁的典型男性形象是174cm的身高，喜欢比自己小8~12岁的女性；42岁的他身高也有173cm，而54岁的他则稍矮一点为171cm，他们都是本科教育水平，对理想女性的标准一致地选择了稍低一些的大专。</p>
       <p>看来男性学历更高的家庭模式还是更为中国社会接受的主流。</p>
     </div>    
-    <div class="container">
-      <h3 class="chartTitle">毕业生就业行业分布</h3>
-      <div class="chart" id="scatter"></div>
-    </div>
     <div class="text-container">
       <p class="section-title">结语</p>
       <p> 这些数据可以让我们大致对中国相亲人士的群像进行一个简单的素描，也可以从中小窥当今中国的择偶观及家庭观。但是目前为止，真正的情感还是无法用数据来准确衡量的，这可能也是它最令人着迷的地方。祝大家都能找到自己的幸福，新春快乐。
@@ -72,8 +82,9 @@
     <p>数据来源：<a href="http://www.jiayuan.com" target="_blank">世纪佳缘网站</a> | 采集程序：<a href="https://github.com/xinjichuanshuo/data-crawler" target="_blank">jiayuan-crawler</a> by <a href="http://robottdog.com" target="_blank" style="color: #545454; text-decoration: underline;">贾聪</a></p>
     <p>数据采集、web可视化: 贾聪 | 数据处理、策划：蔡兆钦 | 新闻文案、美工： 郑书遥、刘妍彤</p>
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+  <script type="text/javascript" src="echarts.min.js"></script>
+  <script src="https://echarts.baidu.com/asset/map/js/china.js"></script>
+  <script type="text/javascript" src="index.js"></script>
 </body>
-<script type="text/javascript" src="echarts.min.js"></script>
-<script src="https://echarts.baidu.com/asset/map/js/china.js"></script>
-<script type="text/javascript" src="index.js"></script>
 </html>
